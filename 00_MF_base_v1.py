@@ -77,6 +77,7 @@ while name!="xxx" and ticket_count<MAX_TICKETS:
 # End of tickets loop
 # Calculate ticket profit...
 ticket_profit=ticket_sales-(5*ticket_count)
+print("Ticket profit: ${:.2f}".format(ticket_profit))
 
 if ticket_count==MAX_TICKETS:
     print("You have sold all the available tickets!")
@@ -94,5 +95,4 @@ else:
 # Calculate total slaes and profit
 
 # Output data to text file
-
 
