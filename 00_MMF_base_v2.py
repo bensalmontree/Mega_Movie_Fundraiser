@@ -76,7 +76,7 @@ all_names=[]
 all_tickets=[]
 
 # Data Frame Dictionary
-move_data_dict={
+movie_data_dict={
     'Name':all_names,
     'Ticket':all_tickets
 }
@@ -117,7 +117,7 @@ while name!="xxx"and ticket_count<MAX_TICKETS:
 # End of tickets / snacks / payment loop
 
 # Print detail...
-movie_frame = pandas.DataFrame(move_data_dict)
+movie_frame = pandas.DataFrame(movie_data_dict)
 print(movie_frame)
 
 # Calculate ticket profits...
