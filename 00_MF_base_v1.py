@@ -31,7 +31,7 @@ def int_check(question):
             
 # ***** Main routine *****
 
-# Set up dictionaires / lists to hold data
+# Set up dictionaries / lists to hold data
 
 # Ask user if they have used the program before
 
@@ -92,7 +92,7 @@ else:
 
     # Ask for payment method (and apply surcharge if necessary)
 
-# Calculate total slaes and profit
+# Calculate total sales and profit
 
 # Output data to text file
 
