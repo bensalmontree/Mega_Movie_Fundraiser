@@ -323,8 +323,17 @@ summary_frame=summary_frame.set_index('Item')
 # Set up columns to be printed...
 pandas.set_option('display.max_columns', None)
 
-# Display numbers to 2 dp...
-pandas.set_option('precision', 2)
+# *** Pre Pringing / Export ***
+# Format currency values so they have $'s
+
+# Ticket Details Formatting (uses currecy function)
+add_dollars=['Ticket','Snacks','Surcharge','Total','Sub Total']
+for item in add_dollars:
+    movie_frame[item]=movie_frame[item].apply(currency)
+
+# Write each frame to a seperate csv files
+movie_frame.to_csv("ticket_details.csv")
+summary_frame.to_csv("snack_summary.csv")
 
 print()
 print("*** Ticket / Snack Information ***")
@@ -355,5 +364,5 @@ print("Ticket profit: ${:.2f}".format(ticket_profit))
 if ticket_count==MAX_TICKETS:
     print("You have sold all the available tickets!")
 else:
-    print("you have sold {} tickets. There are {} places still available".format(ticket_count, MAX_TICKETS - ticket_count))
+    print("You have sold {} tickets. There are {} places still available".format(ticket_count, MAX_TICKETS - ticket_count))
 
