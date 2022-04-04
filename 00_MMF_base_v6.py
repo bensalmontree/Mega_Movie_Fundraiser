@@ -127,6 +127,9 @@ def get_order():
         if snack_choice!="xxx"and snack_choice!="invalid choice":
             snack_order.append(snack_row)
 
+def currency(x):
+    return "${:.2f}".format(x)
+
 # ***** Main routine *****
 
 # Set up dictionaires / lists to hold data
@@ -300,15 +303,18 @@ for item in snack_lists:
 # Get snack total from panda
 snack_total=movie_frame['Snacks'].sum()
 snack_profit=snack_total*0.2
-summary_data.append(snack_profit)
 
 # Get Ticket profit and add to list
 ticket_profit=ticket_sales=(5*ticket_count)
-summary_data.append(ticket_profit)
 
 # Work out total profit and add to list
 total_profit=snack_profit+ticket_profit
-summary_data.append(total_profit)
+
+# Format dollar amount and add to list...
+dollar_amounts=[snack_profit,ticket_profit,total_profit]
+for item in dollar_amounts:
+    item="${:.2f}".format(item)
+    summary_data.append(item)
 
 # Create summary frame
 summary_frame=pandas.DataFrame(summary_data_dict)
