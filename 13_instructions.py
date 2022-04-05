@@ -19,14 +19,14 @@ def string_check(choice,options):
 def instructions(options):
     show_help="invalid choice"
     while show_help=="invalid choice":
-        show_help=input("Would you like to read the instructions? ")
+        show_help=input("Would you like to read the instructions? ").lower()
         show_help=string_check(show_help,options)
     
-    if show_help=="yes":
+    if show_help=="Yes":
         print()
         print("**** Mega Movie Fundraiser Instructions ****")
         print()
-        print("Instructions go hre. They are brief and helpful").lower()
+        print("Instructions go here. They are brief and helpful")
 
     return ""
 
