@@ -138,9 +138,13 @@ def instructions(options):
     
     if show_help=="Yes":
         print()
-        print("**** Mega Movie Fundraiser Instructions ****")
-        print()
-        print("Instructions go hre. They are brief and helpful")
+        print("**** Mega Movie Fundraiser Instructions ****\n")
+        print("To fill in a ticket enter your name and age. You will then be prompted to input any orders of snacks from this selection: ")
+        print(price_dict)
+        print("\nYou may order more than one item by inputting the amount before the order (e.g 2water)")
+        print("After selection of snacks please type 'xxx' to exit / or skip the buying stage, input if you would to pay with cash or credit\n")
+        print("Repeat for any more tickets, otherwise please type 'xxx' after finishing\n")
+
 
     return ""
 
@@ -270,6 +274,7 @@ while name!="xxx"and ticket_count<MAX_TICKETS:
     
     surcharge_mult_list.append(surcharge_multiplier)
 
+    print()
 
 # End of tickets / snacks / payment loop
 
